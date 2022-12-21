@@ -1,3 +1,10 @@
+Custom useTimer for using with SMS-OTP. 
+using = >   
+
+const { currentCount, formattedTimeout, startTimer, resetTimer } = useTimer(
+    currentOTPChallenge?.timeout,
+  );
+
 import { useCallback, useEffect, useState } from 'react';
 
 import { DateTime } from 'luxon';
