@@ -1,5 +1,28 @@
-import useEventListener from '@mlg/tools/hooks/useEventListener';
+This hook has been created for task, where we had long horizintal tab-group. Sometimes, part of the tabs were hidden and user should drag and
+scroll to the left/rigth to see it. But part of the users can't recognise that thwy can do it.
+I decided to add semi-trancparency blinders. Hook checks container and childrens positions, and add blinders in 3 cases: left/righ/both.
+
 import React, { useEffect, useState, useRef } from 'react';
+
+
+function useEventListener(
+  eventType: string,
+  callback: (e: Event) => void,
+  element: Element | Window | null = window
+): void {
+  const callbackRef = useRef(callback);
+
+  useEffect(() => {
+    callbackRef.current = callback;
+  }, [callback]);
+
+  useEffect(() => {
+    if (element == null) return;
+    const handler = (e: Event) => callbackRef.current(e);
+    element.addEventListener(eventType, handler);
+    return () => element.removeEventListener(eventType, handler);
+  }, [eventType, element]);
+}
 
 export default function useContainerBlinders(
   element: Element | null | undefined | HTMLElement,
