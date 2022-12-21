@@ -1,6 +1,6 @@
-This hook has been created for task, where we had long horizintal tab-group. Sometimes, part of the tabs were hidden and user should drag and
-scroll to the left/rigth to see it. But part of the users can't recognise that thwy can do it.
-I decided to add semi-trancparency blinders. Hook checks container and childrens positions, and add blinders in 3 cases: left/righ/both.
+// This hook has been created for task, where we had long horizintal tab-group. Sometimes, part of the tabs were hidden and user should drag and
+// scroll to the left/rigth to see it. But part of the users can't recognise that thwy can do it.
+// I decided to add semi-trancparency blinders. Hook checks container and childrens positions, and add blinders in 3 cases: left/righ/both.
 
 import React, { useEffect, useState, useRef } from 'react';
 
