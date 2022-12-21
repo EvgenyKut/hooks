@@ -1,9 +1,8 @@
-Custom useTimer for using with SMS-OTP. 
-using = >   
+// Custom useTimer for using with SMS-OTP. 
 
-const { currentCount, formattedTimeout, startTimer, resetTimer } = useTimer(
-    currentOTPChallenge?.timeout,
-  );
+// const { currentCount, formattedTimeout, startTimer, resetTimer } = useTimer(
+//     currentOTPChallenge?.timeout,
+//   );
 
 import { useCallback, useEffect, useState } from 'react';
 
